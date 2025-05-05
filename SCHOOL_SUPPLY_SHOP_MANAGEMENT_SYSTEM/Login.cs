@@ -39,7 +39,5 @@ namespace SCHOOL_SUPPLY_SHOP_MANAGEMENT_SYSTEM
                 hideShow.Image = Properties.Resources.hide__2_;
             }
         }
-
-        //GWAPA KO
     }
 }
