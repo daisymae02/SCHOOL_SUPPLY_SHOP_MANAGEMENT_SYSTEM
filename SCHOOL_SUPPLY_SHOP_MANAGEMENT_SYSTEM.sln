@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCHOOL_SUPPLY_SHOP_MANAGEMENT_SYSTEM", "SCHOOL_SUPPLY_SHOP_MANAGEMENT_SYSTEM\SCHOOL_SUPPLY_SHOP_MANAGEMENT_SYSTEM.csproj", "{8C1DEAF7-0079-405A-B719-CDC52DC74AFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C1DEAF7-0079-405A-B719-CDC52DC74AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1DEAF7-0079-405A-B719-CDC52DC74AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1DEAF7-0079-405A-B719-CDC52DC74AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1DEAF7-0079-405A-B719-CDC52DC74AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C3EF49D-E510-48B6-B655-E58A65765528}
+	EndGlobalSection
+EndGlobal
