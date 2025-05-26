@@ -139,6 +139,7 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.Black;
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Georgia", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.White;
@@ -201,12 +202,14 @@
             // 
             txtPassword.BackColor = Color.White;
             txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Cursor = Cursors.IBeam;
             txtPassword.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtPassword.Location = new Point(40, 6);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(303, 21);
             txtPassword.TabIndex = 0;
+            txtPassword.Text = "12345678";
             txtPassword.UseSystemPasswordChar = true;
             // 
             // panel5
@@ -235,12 +238,14 @@
             // 
             txtUsername.BackColor = Color.White;
             txtUsername.BorderStyle = BorderStyle.None;
+            txtUsername.Cursor = Cursors.IBeam;
             txtUsername.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtUsername.Location = new Point(40, 6);
             txtUsername.Name = "txtUsername";
             txtUsername.PlaceholderText = "Username";
             txtUsername.Size = new Size(303, 21);
             txtUsername.TabIndex = 0;
+            txtUsername.Text = "admin123";
             // 
             // panel8
             // 
@@ -266,6 +271,7 @@
             // 
             // Login
             // 
+            AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(235, 229, 215);

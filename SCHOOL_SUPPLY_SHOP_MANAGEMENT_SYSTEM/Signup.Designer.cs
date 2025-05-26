@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label13 = new Label();
-            btnSignup = new LinkLabel();
-            btnLogin = new Button();
             panel31 = new Panel();
             errorConfirmPassword = new Label();
             label12 = new Label();
@@ -52,11 +49,19 @@
             errorUsername = new PictureBox();
             txtUsername = new TextBox();
             panel27 = new Panel();
+            panel35 = new Panel();
             panel22 = new Panel();
             label9 = new Label();
             panel23 = new Panel();
             errorMobileNumber = new PictureBox();
             txtMobileNumber = new TextBox();
+            panel34 = new Panel();
+            cmbRole = new ComboBox();
+            errorRole = new PictureBox();
+            label14 = new Label();
+            label13 = new Label();
+            btnBackLogin = new LinkLabel();
+            btnSignup = new Button();
             panel24 = new Panel();
             panel19 = new Panel();
             label8 = new Label();
@@ -111,9 +116,12 @@
             panel25.SuspendLayout();
             panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorUsername).BeginInit();
+            panel35.SuspendLayout();
             panel22.SuspendLayout();
             panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorMobileNumber).BeginInit();
+            panel34.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorRole).BeginInit();
             panel19.SuspendLayout();
             panel20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorEmail).BeginInit();
@@ -139,16 +147,16 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(235, 229, 215);
-            panel1.Controls.Add(label13);
-            panel1.Controls.Add(btnSignup);
-            panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(panel31);
             panel1.Controls.Add(panel33);
             panel1.Controls.Add(panel28);
             panel1.Controls.Add(panel30);
             panel1.Controls.Add(panel25);
             panel1.Controls.Add(panel27);
-            panel1.Controls.Add(panel22);
+            panel1.Controls.Add(panel35);
+            panel1.Controls.Add(label13);
+            panel1.Controls.Add(btnBackLogin);
+            panel1.Controls.Add(btnSignup);
             panel1.Controls.Add(panel24);
             panel1.Controls.Add(panel19);
             panel1.Controls.Add(panel21);
@@ -169,42 +177,6 @@
             panel1.Padding = new Padding(25, 30, 25, 30);
             panel1.Size = new Size(564, 850);
             panel1.TabIndex = 0;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(155, 798);
-            label13.Name = "label13";
-            label13.Size = new Size(178, 20);
-            label13.TabIndex = 30;
-            label13.Text = "Already have an account?";
-            // 
-            // btnSignup
-            // 
-            btnSignup.ActiveLinkColor = Color.Black;
-            btnSignup.AutoSize = true;
-            btnSignup.LinkColor = Color.Black;
-            btnSignup.Location = new Point(328, 798);
-            btnSignup.Name = "btnSignup";
-            btnSignup.Size = new Size(99, 20);
-            btnSignup.TabIndex = 29;
-            btnSignup.TabStop = true;
-            btnSignup.Text = "Back to Login";
-            btnSignup.LinkClicked += btnSignup_LinkClicked;
-            // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = Color.Black;
-            btnLogin.FlatStyle = FlatStyle.Popup;
-            btnLogin.Font = new Font("Georgia", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(25, 754);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(514, 41);
-            btnLogin.TabIndex = 9;
-            btnLogin.Text = "Sign Up";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
             // 
             // panel31
             // 
@@ -299,7 +271,7 @@
             // errorPassword
             // 
             errorPassword.BackColor = Color.Transparent;
-            errorPassword.Image = Properties.Resources.icons8_x_button_30;
+            errorPassword.Image = Properties.Resources.icons8_warning_48;
             errorPassword.Location = new Point(116, 0);
             errorPassword.Name = "errorPassword";
             errorPassword.Size = new Size(20, 20);
@@ -401,7 +373,7 @@
             // errorUsername
             // 
             errorUsername.BackColor = Color.White;
-            errorUsername.Image = Properties.Resources.icons8_x_button_30;
+            errorUsername.Image = Properties.Resources.icons8_warning_48;
             errorUsername.Location = new Point(487, 7);
             errorUsername.Name = "errorUsername";
             errorUsername.Size = new Size(20, 20);
@@ -429,14 +401,23 @@
             panel27.Size = new Size(514, 20);
             panel27.TabIndex = 23;
             // 
+            // panel35
+            // 
+            panel35.Controls.Add(panel22);
+            panel35.Controls.Add(panel34);
+            panel35.Dock = DockStyle.Top;
+            panel35.Location = new Point(25, 473);
+            panel35.Name = "panel35";
+            panel35.Size = new Size(514, 55);
+            panel35.TabIndex = 24;
+            // 
             // panel22
             // 
             panel22.Controls.Add(label9);
             panel22.Controls.Add(panel23);
-            panel22.Dock = DockStyle.Top;
-            panel22.Location = new Point(25, 473);
+            panel22.Location = new Point(0, 0);
             panel22.Name = "panel22";
-            panel22.Size = new Size(514, 55);
+            panel22.Size = new Size(263, 55);
             panel22.TabIndex = 22;
             // 
             // label9
@@ -447,9 +428,9 @@
             label9.Location = new Point(0, 0);
             label9.Name = "label9";
             label9.RightToLeft = RightToLeft.No;
-            label9.Size = new Size(219, 20);
+            label9.Size = new Size(208, 20);
             label9.TabIndex = 11;
-            label9.Text = "PHONE NUMBER (+63)";
+            label9.Text = "PHONE NUMBER (09)";
             label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel23
@@ -460,14 +441,14 @@
             panel23.Dock = DockStyle.Bottom;
             panel23.Location = new Point(0, 21);
             panel23.Name = "panel23";
-            panel23.Size = new Size(514, 34);
+            panel23.Size = new Size(263, 34);
             panel23.TabIndex = 7;
             // 
             // errorMobileNumber
             // 
             errorMobileNumber.BackColor = Color.White;
-            errorMobileNumber.Image = Properties.Resources.icons8_x_button_30;
-            errorMobileNumber.Location = new Point(487, 7);
+            errorMobileNumber.Image = Properties.Resources.icons8_warning_48;
+            errorMobileNumber.Location = new Point(240, 7);
             errorMobileNumber.Name = "errorMobileNumber";
             errorMobileNumber.Size = new Size(20, 20);
             errorMobileNumber.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -481,11 +462,95 @@
             txtMobileNumber.BorderStyle = BorderStyle.None;
             txtMobileNumber.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtMobileNumber.Location = new Point(16, 5);
-            txtMobileNumber.MaxLength = 12;
+            txtMobileNumber.MaxLength = 11;
             txtMobileNumber.Name = "txtMobileNumber";
-            txtMobileNumber.Size = new Size(495, 21);
+            txtMobileNumber.Size = new Size(218, 21);
             txtMobileNumber.TabIndex = 0;
             txtMobileNumber.TextChanged += txtMobileNumber_TextChanged;
+            txtMobileNumber.KeyPress += txtMobileNumber_KeyPress;
+            // 
+            // panel34
+            // 
+            panel34.Controls.Add(cmbRole);
+            panel34.Controls.Add(errorRole);
+            panel34.Controls.Add(label14);
+            panel34.Location = new Point(286, 0);
+            panel34.Name = "panel34";
+            panel34.Size = new Size(228, 55);
+            panel34.TabIndex = 31;
+            // 
+            // cmbRole
+            // 
+            cmbRole.BackColor = Color.White;
+            cmbRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbRole.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbRole.FormattingEnabled = true;
+            cmbRole.Location = new Point(3, 24);
+            cmbRole.Name = "cmbRole";
+            cmbRole.Size = new Size(225, 30);
+            cmbRole.TabIndex = 32;
+            cmbRole.SelectedIndexChanged += cmbRole_SelectedIndexChanged;
+            // 
+            // errorRole
+            // 
+            errorRole.BackColor = Color.Transparent;
+            errorRole.Image = Properties.Resources.icons8_warning_48;
+            errorRole.Location = new Point(61, 0);
+            errorRole.Name = "errorRole";
+            errorRole.Size = new Size(20, 20);
+            errorRole.SizeMode = PictureBoxSizeMode.StretchImage;
+            errorRole.TabIndex = 16;
+            errorRole.TabStop = false;
+            errorRole.Visible = false;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Georgia", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Black;
+            label14.Location = new Point(0, 0);
+            label14.Name = "label14";
+            label14.RightToLeft = RightToLeft.Yes;
+            label14.Size = new Size(61, 20);
+            label14.TabIndex = 32;
+            label14.Text = "ROLE";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(155, 798);
+            label13.Name = "label13";
+            label13.Size = new Size(178, 20);
+            label13.TabIndex = 30;
+            label13.Text = "Already have an account?";
+            // 
+            // btnBackLogin
+            // 
+            btnBackLogin.ActiveLinkColor = Color.Black;
+            btnBackLogin.AutoSize = true;
+            btnBackLogin.LinkColor = Color.Black;
+            btnBackLogin.Location = new Point(328, 798);
+            btnBackLogin.Name = "btnBackLogin";
+            btnBackLogin.Size = new Size(99, 20);
+            btnBackLogin.TabIndex = 29;
+            btnBackLogin.TabStop = true;
+            btnBackLogin.Text = "Back to Login";
+            btnBackLogin.LinkClicked += btnBackLogin_LinkClicked;
+            // 
+            // btnSignup
+            // 
+            btnSignup.BackColor = Color.Black;
+            btnSignup.FlatStyle = FlatStyle.Popup;
+            btnSignup.Font = new Font("Georgia", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignup.ForeColor = Color.White;
+            btnSignup.Location = new Point(25, 754);
+            btnSignup.Name = "btnSignup";
+            btnSignup.Size = new Size(514, 41);
+            btnSignup.TabIndex = 9;
+            btnSignup.Text = "Sign Up";
+            btnSignup.UseVisualStyleBackColor = false;
+            btnSignup.Click += btnSignup_Click;
             // 
             // panel24
             // 
@@ -532,7 +597,7 @@
             // errorEmail
             // 
             errorEmail.BackColor = Color.White;
-            errorEmail.Image = Properties.Resources.icons8_x_button_30;
+            errorEmail.Image = Properties.Resources.icons8_warning_48;
             errorEmail.Location = new Point(487, 7);
             errorEmail.Name = "errorEmail";
             errorEmail.Size = new Size(20, 20);
@@ -598,7 +663,7 @@
             // errorAddress
             // 
             errorAddress.BackColor = Color.White;
-            errorAddress.Image = Properties.Resources.icons8_x_button_30;
+            errorAddress.Image = Properties.Resources.icons8_warning_48;
             errorAddress.Location = new Point(487, 7);
             errorAddress.Name = "errorAddress";
             errorAddress.Size = new Size(20, 20);
@@ -650,7 +715,7 @@
             // errorGender
             // 
             errorGender.BackColor = Color.Transparent;
-            errorGender.Image = Properties.Resources.icons8_x_button_30;
+            errorGender.Image = Properties.Resources.icons8_warning_48;
             errorGender.Location = new Point(87, 0);
             errorGender.Name = "errorGender";
             errorGender.Size = new Size(20, 20);
@@ -683,6 +748,7 @@
             rbuttonFemale.TabStop = true;
             rbuttonFemale.Text = "FEMALE";
             rbuttonFemale.UseVisualStyleBackColor = true;
+            rbuttonFemale.CheckedChanged += rbuttonFemale_CheckedChanged;
             // 
             // rbuttonMale
             // 
@@ -695,6 +761,7 @@
             rbuttonMale.TabStop = true;
             rbuttonMale.Text = "MALE";
             rbuttonMale.UseVisualStyleBackColor = true;
+            rbuttonMale.CheckedChanged += rbuttonMale_CheckedChanged;
             // 
             // panel13
             // 
@@ -709,7 +776,7 @@
             // errorDob
             // 
             errorDob.BackColor = Color.Transparent;
-            errorDob.Image = Properties.Resources.icons8_x_button_30;
+            errorDob.Image = Properties.Resources.icons8_warning_48;
             errorDob.Location = new Point(156, 0);
             errorDob.Name = "errorDob";
             errorDob.Size = new Size(20, 20);
@@ -841,7 +908,7 @@
             // errorFirstname
             // 
             errorFirstname.BackColor = Color.White;
-            errorFirstname.Image = Properties.Resources.icons8_x_button_30;
+            errorFirstname.Image = Properties.Resources.icons8_warning_48;
             errorFirstname.Location = new Point(487, 7);
             errorFirstname.Name = "errorFirstname";
             errorFirstname.Size = new Size(20, 20);
@@ -906,7 +973,7 @@
             // errorLastname
             // 
             errorLastname.BackColor = Color.White;
-            errorLastname.Image = Properties.Resources.icons8_x_button_30;
+            errorLastname.Image = Properties.Resources.icons8_warning_48;
             errorLastname.Location = new Point(487, 7);
             errorLastname.Name = "errorLastname";
             errorLastname.Size = new Size(20, 20);
@@ -988,11 +1055,15 @@
             panel26.ResumeLayout(false);
             panel26.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorUsername).EndInit();
+            panel35.ResumeLayout(false);
             panel22.ResumeLayout(false);
             panel22.PerformLayout();
             panel23.ResumeLayout(false);
             panel23.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorMobileNumber).EndInit();
+            panel34.ResumeLayout(false);
+            panel34.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorRole).EndInit();
             panel19.ResumeLayout(false);
             panel19.PerformLayout();
             panel20.ResumeLayout(false);
@@ -1090,9 +1161,9 @@
         private Panel panel30;
         private PictureBox hideShow1;
         private PictureBox hideShow2;
-        private Button btnLogin;
+        private Button btnSignup;
         private Label label13;
-        private LinkLabel btnSignup;
+        private LinkLabel btnBackLogin;
         private PictureBox errorLastname;
         private PictureBox errorAddress;
         private PictureBox errorFirstname;
@@ -1103,5 +1174,10 @@
         private PictureBox errorGender;
         private Label errorConfirmPassword;
         private PictureBox errorPassword;
+        private Panel panel35;
+        private Panel panel34;
+        private ComboBox cmbRole;
+        private PictureBox errorRole;
+        private Label label14;
     }
 }
